@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Momo+Signature&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  --text-main: #2d3436;
+  --accent-sepia: #8d6e63;
+  --accent-green: #588157;
+  --bg-page: #e2d1c3; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-page); 
+  display: flex;
+  justify-content: center;
+  overflow: hidden; 
+}
+
+.container {
+  background-image: url('../../public/fondo-carta.avif');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  max-width: 550px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  padding: 110px 70px 80px 75px; 
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  font-size: 2.2rem;
+  color: #1e272e;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.gift-form {
+  display: flex;
+  margin-bottom: 25px;
+  border: 1px solid var(--accent-sepia);
+  border-radius: 4px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.input-gift {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background: transparent;
+}
+
+.add-button {
+  padding: 0 25px;
+  background-color: var(--accent-sepia);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.list-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-sepia) transparent;
+}
+
+.list-container::-webkit-scrollbar { width: 5px; }
+.list-container::-webkit-scrollbar-thumb { background: var(--accent-sepia); border-radius: 10px; }
+
+.item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.15);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.left-section {
+  width: 110px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--accent-sepia);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.checkbox.checked {
+  background-color: var(--accent-green);
+  border-color: var(--accent-green);
+  color: white;
+}
+
+.product-text {
+  flex: 1;
+  text-align: center;
+  font-size: 1.05rem;
+  color: #3e2723;
+  padding: 0 8px;
+  overflow-wrap: anywhere; 
+  word-break: break-word;
+}
+
+.product-text.completed {
+  text-decoration: line-through;
+  color: #8d8d8d;
+}
+
+.status-container {
+  width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.status-label {
+  min-width: 70px;
+  text-align: center;
+  font-size: 0.6rem;
+  padding: 3px 7px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.status-label.pending { color: var(--accent-sepia); }
+.status-label.reserved { color: var(--accent-green); }
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px;
+}
+
+@media (max-width: 550px) {
+  .container {
+    padding: 100px 45px 60px 55px;
+  }
+  .title {
+    font-size: 1.7rem;
+  }
+  .left-section, .status-container {
+    width: 90px;
+  }
+  .status-label {
+    min-width: 65px;
+    font-size: 0.55rem;
+  }
+  .product-text {
+    font-size: 0.95rem;
+  }
+}
+
+.instructions-trigger {
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-size: 0.8rem;
+  color: var(--accent-sepia);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-right: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.instructions-trigger:hover {
+  opacity: 1;
+}

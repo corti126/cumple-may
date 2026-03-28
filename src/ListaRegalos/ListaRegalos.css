@@ -40,11 +40,7 @@ body {
 
 .title {
   font-family: "Noto Serif", serif;
-  font-optical-sizing: auto;
   font-weight: 600;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
   font-size: 2.2rem;
   color: #1e272e;
   text-transform: uppercase;
@@ -52,6 +48,7 @@ body {
   margin: 0;
 }
 
+/* --- CAMBIO AQUÍ: Formulario Responsivo --- */
 .gift-form {
   display: flex;
   margin-bottom: 25px;
@@ -59,10 +56,14 @@ body {
   border-radius: 4px;
   flex-shrink: 0;
   background: rgba(255, 255, 255, 0.4);
+  width: 100%; /* Asegura que ocupe el ancho del pergamino */
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .input-gift {
-  flex: 1;
+  flex: 1; /* Toma todo el espacio sobrante */
+  min-width: 0; /* Permite que el input se achique en mobile sin empujar el botón */
   padding: 14px;
   border: none;
   font-size: 1rem;
@@ -71,13 +72,15 @@ body {
 }
 
 .add-button {
-  padding: 0 25px;
+  padding: 0 20px; /* Reduje un poco el padding lateral */
   background-color: var(--accent-sepia);
   color: white;
   border: none;
   cursor: pointer;
   font-weight: bold;
   text-transform: uppercase;
+  flex-shrink: 0; /* Evita que el botón se aplaste */
+  white-space: nowrap; /* Evita que el texto "AÑADIR" se parta en dos filas */
 }
 
 .list-container {
@@ -177,20 +180,24 @@ body {
 
 @media (max-width: 550px) {
   .container {
-    padding: 100px 45px 60px 55px;
+    padding: 100px 40px 60px 45px; 
   }
   .title {
     font-size: 1.7rem;
   }
   .left-section, .status-container {
-    width: 90px;
+    width: 80px; 
   }
   .status-label {
-    min-width: 65px;
-    font-size: 0.55rem;
+    min-width: 60px;
+    font-size: 0.5rem;
   }
   .product-text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+  }
+  .add-button {
+    padding: 0 12px;
+    font-size: 0.75rem;
   }
 }
 
